@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 4780718715674580923}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.65, y: -1.65, z: 0}
+  m_LocalPosition: {x: 3.08, y: -0.11, z: 0}
   m_LocalScale: {x: 0.9019, y: 0.9287, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -130732045
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -6367560908665664636, guid: 3750f45c844123341b9a777a96cb1eca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -343,7 +343,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 732589542027708202}
   vida: 3
   isKnockBack: 0
-  moventSpeed: 15
+  moventSpeed: 8
   jumpPower: 15
   maxJumps: 2
   fallSpeed: 10
@@ -374,9 +374,16 @@ MonoBehaviour:
   wallumpTime: 0
   wallJumpTimer: 0
   isWallJumping: 0
-  baseGravity: 2
+  baseGravity: 3
   fallSpeedMultipler: 2
   isFacingRigth: 1
+  basketUI: {fileID: 0}
+  playerCollector: {fileID: 0}
+  checkpointAnimator: {fileID: 0}
+  numFrutas: {fileID: 0}
+  numFrutasTotal: {fileID: 0}
+  isFanned: 0
+  cam: {fileID: 0}
 --- !u!95 &1085451728878863405
 Animator:
   serializedVersion: 5
@@ -387,7 +394,7 @@ Animator:
   m_GameObject: {fileID: 4780718715674580923}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76931263e795e344999dea0a1ebb92da, type: 2}
+  m_Controller: {fileID: 9100000, guid: 896256711e73e6a4bbd5c6ef778f671a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

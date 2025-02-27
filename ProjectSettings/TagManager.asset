@@ -12,6 +12,10 @@ TagManager:
   - Basket
   - Checkpoint
   - FanLeft
+  - Ghost
+  - numFrutas
+  - numFrutasTotal
+  - Fruit
   layers:
   - Default
   - TransparentFX

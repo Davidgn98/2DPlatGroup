@@ -8,10 +8,15 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-    public GameObject[] corazonesImages;
-    public GameObject[] frutas;
-    public TMP_Text numFrutasTotal;
-    public TMP_Text numFrutas;
+    //public GameObject[] corazonesImages;
+    private GameObject[] frutas;
+    //public TMP_Text numFrutasTotal;
+    //public TMP_Text numFrutas;
+    private GameObject numFrutasTotal;
+    private GameObject numFrutas;
+    private TMP_Text numFrutasText;
+    private TMP_Text numFrutasTextTotal;
+    private int numFrutasInt;
     private void Awake()
     {
         if (instance == null)
@@ -23,22 +28,29 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        numFrutas = GameObject.FindWithTag("numFrutas");
+        numFrutasText = numFrutas.GetComponent<TMP_Text>();
+        numFrutasText.text = "0";
+        numFrutasTotal = GameObject.FindWithTag("numFrutasTotal");
+        numFrutasTextTotal = numFrutasTotal.GetComponent<TMP_Text>();
+        frutas = GameObject.FindGameObjectsWithTag("Fruit");
+        numFrutasTextTotal.text = frutas.Length.ToString();
     }
 
-    public void ActualizarCorazones()
-    {
-        UnityEngine.Debug.Log("-1 vida");
-        for (int i = 0; i < corazonesImages.Length; i++)
-        {
-            if (corazonesImages[i].activeSelf)
-            {
-                UnityEngine.Debug.Log("entra");
-                corazonesImages[i].gameObject.SetActive(false); // Desactiva la imagen del corazón
-                break;
-            }
+    //public void ActualizarCorazones()
+    //{
+    //    UnityEngine.Debug.Log("-1 vida");
+    //    for (int i = 0; i < corazonesImages.Length; i++)
+    //    {
+    //        if (corazonesImages[i].activeSelf)
+    //        {
+    //            UnityEngine.Debug.Log("entra");
+    //            corazonesImages[i].gameObject.SetActive(false); // Desactiva la imagen del corazón
+    //            break;
+    //        }
 
-        }
-    }
+    //    }
+    //}
 
     //TODO Axel Audio
     private void Start()
@@ -60,15 +72,26 @@ public class GameManager : MonoBehaviour
         //// Stop the music from Main Menu and play music of GameScene
         //AudioManager.instance.StopMusic("StageSelect");
         //AudioManager.instance.PlayMusic("Stage1");
-        numFrutasTotal.text = frutas.Length.ToString();
     }
 
     public void UpdateNumFrutas()
     {
-        int numFrutasInt = int.Parse(numFrutas.text);
+        ResetCanvas();
+        numFrutasInt = int.Parse(numFrutasText.text);
         numFrutasInt += 1;
-        numFrutas.text = numFrutasInt.ToString();
+        numFrutasText.text = numFrutasInt.ToString();
     }
 
+    public void Restart()
+    {
+        numFrutasText.text = "0";
+        numFrutasInt = 0;
+    }
+
+    public void ResetCanvas()
+    {
+        numFrutas = GameObject.FindWithTag("numFrutas");
+        numFrutasText = numFrutas.GetComponent<TMP_Text>();
+    }
 
 }

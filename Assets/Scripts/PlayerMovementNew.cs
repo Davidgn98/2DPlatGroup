@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 using UnityEngine.Video;
@@ -313,7 +314,7 @@ public class PlayerMovementNew : MonoBehaviour
 
         }
 
-        if(collision.gameObject.tag == "PajaroPerseguidor") 
+        if(collision.gameObject.tag == "PajaroPerseguidor" || collision.gameObject.tag == "Ghost") 
         {
             RecibirDaño(collision);
         }
@@ -352,15 +353,17 @@ public class PlayerMovementNew : MonoBehaviour
 
     public void RecibirDaño(Collision2D collision) 
     {
-        isKnockBack = true;
-        //restamos vida
-        vida--;
+        GameManager.instance.Restart();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // isKnockBack = true;
+        // //restamos vida
+        // vida--;
 
-       Retroceso(collision);
+        //Retroceso(collision);
 
-        //Actulizamos corazones en el UI
-        GameManager.instance.ActualizarCorazones();
-        StartCoroutine(FlashRed());
+        // //Actulizamos corazones en el UI
+        // //GameManager.instance.ActualizarCorazones();
+        // StartCoroutine(FlashRed());
     }
     public void Retroceso(Collision2D collision) 
     {
@@ -369,7 +372,7 @@ public class PlayerMovementNew : MonoBehaviour
         UnityEngine.Debug.Log("Aplicando retroceso");
         rb.velocity = Vector2.zero;  // Detiene el movimiento actual del personaje
         rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);  // Aplica la fuerza de retroceso
-        StartCoroutine(FinRetroceso());
+        StartCoroutine("FinRetroceso");
     }
 
     private IEnumerator FinRetroceso() 

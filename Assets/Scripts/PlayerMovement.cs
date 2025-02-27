@@ -98,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator checkpointAnimator;
     public TMP_Text numFrutas;
     public TMP_Text numFrutasTotal;
+    public Camera cam;
 
     private void Start()
     {
@@ -340,16 +341,24 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    //private IEnumerator Death()
+    //{
+        
+    //    animator.SetTrigger("Death");
+
+    //}
+
     public void RecibirDaño(Collision2D collision) 
     {
+        //StartCoroutine("Death");
         isKnockBack = true;
         //restamos vida
         vida--;
 
-       Retroceso(collision);
+        Retroceso(collision);
 
         //Actulizamos corazones en el UI
-        GameManager.instance.ActualizarCorazones();
+        //GameManager.instance.ActualizarCorazones();
         StartCoroutine(FlashRed());
     }
     public void Retroceso(Collision2D collision) 

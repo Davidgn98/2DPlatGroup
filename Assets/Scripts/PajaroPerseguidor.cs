@@ -14,7 +14,36 @@ public class PajaroPerseguidor : MonoBehaviour
     bool check = false;
     bool volver = false;
 
+    private BoxCollider2D boxCollider2DGhostBody;
+    private BoxCollider2D boxCollider2DGhostHead;
 
+
+    private void Start()
+    {
+        boxCollider2DGhostBody = gameObject.GetComponent<BoxCollider2D>();
+        boxCollider2DGhostHead = GameObject.FindGameObjectWithTag("CabezaEnemigo").GetComponent<BoxCollider2D>();
+
+        StartCoroutine("ChangeVisualStatus");
+    }
+
+    private IEnumerator ChangeVisualStatus()
+    {
+
+        if (gameObject.CompareTag("Ghost"))
+        {
+            while (true)
+            {
+                boxCollider2DGhostBody.enabled = true;
+                boxCollider2DGhostHead.enabled = true;
+                GetComponent<Animator>().SetTrigger("Appear");
+                yield return new WaitForSeconds(5f);
+                boxCollider2DGhostBody.enabled = false;
+                boxCollider2DGhostHead.enabled = false;
+                GetComponent<Animator>().SetTrigger("Desappear");
+                yield return new WaitForSeconds(5f);
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
