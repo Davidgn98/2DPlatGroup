@@ -100,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
     public TMP_Text numFrutasTotal;
     public Camera cam;
 
+    private Animator pigAnimator;
     private void Start()
     {
         playerCollector = GetComponent<PlayerCollector>();
@@ -315,9 +316,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Trampa") 
         {
             RecibirDaño(collision);
-
         }
-
         if(collision.gameObject.tag == "PajaroPerseguidor") 
         {
             RecibirDaño(collision);

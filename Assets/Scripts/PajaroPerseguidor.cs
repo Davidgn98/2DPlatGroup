@@ -20,10 +20,12 @@ public class PajaroPerseguidor : MonoBehaviour
 
     private void Start()
     {
-        boxCollider2DGhostBody = gameObject.GetComponent<BoxCollider2D>();
-        boxCollider2DGhostHead = GameObject.FindGameObjectWithTag("CabezaEnemigo").GetComponent<BoxCollider2D>();
-
-        StartCoroutine("ChangeVisualStatus");
+        if(GameObject.FindGameObjectWithTag("Ghost"))
+        {
+            boxCollider2DGhostBody = gameObject.GetComponent<BoxCollider2D>();
+            boxCollider2DGhostHead = GameObject.FindGameObjectWithTag("CabezaEnemigo").GetComponent<BoxCollider2D>();
+            StartCoroutine("ChangeVisualStatus");
+        } 
     }
 
     private IEnumerator ChangeVisualStatus()

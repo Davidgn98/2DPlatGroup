@@ -16,6 +16,8 @@ TagManager:
   - numFrutas
   - numFrutasTotal
   - Fruit
+  - CabezaEnemigoPig
+  - Pig
   layers:
   - Default
   - TransparentFX
