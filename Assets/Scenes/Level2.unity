@@ -36382,7 +36382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7045727090772034789, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.489998
+      value: -22.760002
       objectReference: {fileID: 0}
     - target: {fileID: 7269499724645767073, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_Controller
@@ -36394,7 +36394,7 @@ PrefabInstance:
       objectReference: {fileID: 3863635566180601805, guid: bb22e9cd7a3f50c41aa55c47dd8c2975, type: 3}
     - target: {fileID: 7337603759124297186, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7337603759124297186, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_SortingOrder
@@ -36402,11 +36402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7337603759124297186, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1618394685
+      value: -130732045
       objectReference: {fileID: 0}
     - target: {fileID: 7510278123206205681, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.489998
+      value: -22.76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41984,8 +41984,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3863635566180601805, guid: bb22e9cd7a3f50c41aa55c47dd8c2975, type: 3}
     - target: {fileID: 7337603759124297186, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337603759124297186, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -130732045
       objectReference: {fileID: 0}
     - target: {fileID: 7510278123206205681, guid: 2338b5e58c224404ebf659353a5c1b59, type: 3}
       propertyPath: m_LocalScale.x
