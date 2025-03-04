@@ -99,9 +99,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        //mainAudioMixer.SetFloat("Music Volume", Mathf.Log10(musicVolume) * 20);
         mainAudioMixer.SetFloat("Music", Mathf.Log10(musicVolume) * 20);
-        //mainAudioMixer.SetFloat("Fx Volume", Mathf.Log10(fxVolume) * 20);
         mainAudioMixer.SetFloat("Effectos", Mathf.Log10(fxVolume) * 20);
     }
 

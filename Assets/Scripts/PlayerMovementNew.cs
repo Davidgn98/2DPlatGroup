@@ -16,7 +16,6 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerMovementNew : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Rigidbody2D rb;
 
     public Animator animator;
@@ -121,6 +120,7 @@ public class PlayerMovementNew : MonoBehaviour
         if (!isWallJumping && !isKnockBack && !isFanned)
         {
             //movimiento del jugador
+            AudioManager.instance.PlayFX("Walk");
             rb.velocity = new Vector2(horizontalMovement * moventSpeed, rb.velocity.y);
             Flip();
             isKnockBack = false;
@@ -342,12 +342,23 @@ public class PlayerMovementNew : MonoBehaviour
         }
 
     }
-
+    public static void DesbloqeuarUnNivelMas()
+    {
+        print("Nivel actual: " + SceneManager.GetActiveScene().buildIndex);
+        print("Nivel siguiente: " + SceneManager.GetActiveScene().buildIndex+1);
+        PlayerPrefs.SetInt("MaxLevel", SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.Save();
+    }
     private IEnumerator FinishLevel()
     {
+        //Desbloqueamos el siguiente nivel para el menú
+        DesbloqeuarUnNivelMas();
+
         checkpointAnimator.SetBool("Win", true);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("MainMenu");
+        AudioManager.instance.StopMusic("Level"+(SceneManager.GetActiveScene().buildIndex+1));
+        AudioManager.instance.PlayMusic("MusicaMenu");
+        SceneManager.LoadScene(4);
         yield return null;
     }
 
