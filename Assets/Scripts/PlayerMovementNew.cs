@@ -336,11 +336,19 @@ public class PlayerMovementNew : MonoBehaviour
         {
             if (numFrutas.text == numFrutasTotal.text)
             {
-                checkpointAnimator.SetBool("Win", true);
+                StartCoroutine("FinishLevel");
             }
 
         }
 
+    }
+
+    private IEnumerator FinishLevel()
+    {
+        checkpointAnimator.SetBool("Win", true);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
+        yield return null;
     }
 
     private IEnumerator FlashRed()

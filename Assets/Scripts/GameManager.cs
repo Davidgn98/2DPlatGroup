@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -52,28 +51,6 @@ public class GameManager : MonoBehaviour
     //    }
     //}
 
-    //TODO Axel Audio
-    private void Start()
-    {
-        //state = GameStates.Start;
-
-        //// Set the initial visibility of UI elements
-        //uiStart.SetActive(true);
-        //uiHUD.SetActive(false);
-        //uiEndMenu.SetActive(false);
-
-        //// Set the initial scale of start menu elements
-        //uiStart_ready.localScale = Vector3.zero;
-        //uiStart_go.localScale = Vector3.zero;
-
-        //// Set the starting value of the gameScore
-        //gameScore = 0;
-
-        //// Stop the music from Main Menu and play music of GameScene
-        //AudioManager.instance.StopMusic("StageSelect");
-        //AudioManager.instance.PlayMusic("Stage1");
-    }
-
     public void UpdateNumFrutas()
     {
         ResetCanvas();
@@ -93,5 +70,6 @@ public class GameManager : MonoBehaviour
         numFrutas = GameObject.FindWithTag("numFrutas");
         numFrutasText = numFrutas.GetComponent<TMP_Text>();
     }
+
 
 }
