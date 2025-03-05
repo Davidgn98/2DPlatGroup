@@ -6,9 +6,22 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public ManagerNiveles managerNiveles;
+    private AudioManager audioManager;
     public void Start()
     {
-        AudioManager.instance.PlayMusic("MusicaMenu");
+        audioManager = FindObjectOfType<AudioManager>();
+
+        if (audioManager != null)
+        {
+            Debug.Log("AudioManager encontrado correctamente.");
+            audioManager.PlayMenu();
+        }
+        else
+        {
+            Debug.Log("AudioManager no encontrado.");
+        }
+
+        
     }
     public void LoadLevel(string level)
     {

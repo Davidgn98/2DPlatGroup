@@ -91,7 +91,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: a300e70258574424d94cbb2c1fae4c83, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -101,8 +101,32 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: a95892de77c3a134cb5c557df9577e74, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: Air
-    clip: {fileID: 8300000, guid: 9c7634bf2e2c0624990dc104aa301734, type: 3}
+    clip: {fileID: 8300000, guid: 3e75a56eef045f94caa76b7b9f981f65, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 24e2563c6fe2cbe4994449dafac5ccf1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Basket
+    clip: {fileID: 8300000, guid: e982f88dd5d148e42a74cb2e6b23e0e6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Enemy
+    clip: {fileID: 8300000, guid: e08d1aeeb76997c418d7cb2d6a7fe6d5, type: 3}
     volume: 1
     pitch: 1
     loop: 0

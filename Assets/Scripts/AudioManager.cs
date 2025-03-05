@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -9,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] music;
     public Sound[] fx;
 
+    public string nivelActual;
     public AudioMixer mainAudioMixer;
     public AudioMixerGroup musicAudioMixerGroup;
     public AudioMixerGroup FXAudioMixerGroup;
@@ -34,8 +36,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        // Make the object persisten between scenes
-        DontDestroyOnLoad(this.gameObject);
+        //// Make the object persisten between scenes
+        //DontDestroyOnLoad(this.gameObject);
 
         // Create an AudioSource for each music element and configure it
         foreach (Sound s in music)
@@ -69,12 +71,14 @@ public class AudioManager : MonoBehaviour
             efecto.source.outputAudioMixerGroup = FXAudioMixerGroup;
         }
     }
+
+    
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(music, s => s.name == name);
 
         if (s != null)
-        {
+        {           
             s.source.Play();
         }
         else
@@ -101,6 +105,25 @@ public class AudioManager : MonoBehaviour
     {
         mainAudioMixer.SetFloat("Music", Mathf.Log10(musicVolume) * 20);
         mainAudioMixer.SetFloat("Effectos", Mathf.Log10(fxVolume) * 20);
+        print(nivelActual);
+
+        if (nivelActual=="1") 
+        { 
+            PlayMusic("Level1");
+        }
+        if (nivelActual == "2")
+        {
+            PlayMusic("Level2");
+        }
+        if (nivelActual == "3")
+        {
+            PlayMusic("Level3");
+        }
+        if (nivelActual == "4")
+        {
+            PlayMusic("Level4");
+        }
+
     }
 
     public void StopMusic(string name)
@@ -123,6 +146,14 @@ public class AudioManager : MonoBehaviour
         // To test the musicVolume variable
         //mainAudioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
     }
+
+
+    public void PlayMenu() 
+    {
+
+        PlayMusic("MusicaMenu");
+    }
+
 
     public void StartLoop(string name)
     {

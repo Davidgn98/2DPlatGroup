@@ -353,7 +353,6 @@ public class PlayerMovementNew : MonoBehaviour
                 AudioManager.instance.PlayFX("Win");
                 StartCoroutine("FinishLevel");
             }
-
         }
 
     }
@@ -371,8 +370,6 @@ public class PlayerMovementNew : MonoBehaviour
 
         checkpointAnimator.SetBool("Win", true);
         yield return new WaitForSeconds(2f);
-        AudioManager.instance.StopMusic("Level"+(SceneManager.GetActiveScene().buildIndex+1));
-        AudioManager.instance.PlayMusic("MusicaMenu");
         SceneManager.LoadScene(4);
         yield return null;
     }

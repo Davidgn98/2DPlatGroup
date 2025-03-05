@@ -5621,7 +5621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1178517887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9856,84 +9856,8 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a95892de77c3a134cb5c557df9577e74, type: 3}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[4].name
-      value: Lose
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e75a56eef045f94caa76b7b9f981f65, type: 3}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[5].name
-      value: Air
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 24e2563c6fe2cbe4994449dafac5ccf1, type: 3}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[6].name
-      value: Win
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e982f88dd5d148e42a74cb2e6b23e0e6, type: 3}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[7].name
-      value: Basket
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e08d1aeeb76997c418d7cb2d6a7fe6d5, type: 3}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[8].name
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[5].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[6].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[7].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[8].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[2].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[5].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[6].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[7].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
-      propertyPath: fx.Array.data[8].volume
-      value: 1
+      propertyPath: nivelActual
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5991006148419911268, guid: affbaf202fd72e040b289806e3493be2, type: 3}
       propertyPath: fxSlider

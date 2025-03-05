@@ -74,6 +74,4 @@ public class GameManager : MonoBehaviour
         numFrutas = GameObject.FindWithTag("numFrutas");
         numFrutasText = numFrutas.GetComponent<TMP_Text>();
     }
-
-
 }

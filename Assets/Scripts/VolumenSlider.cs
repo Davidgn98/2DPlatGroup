@@ -25,14 +25,19 @@ public class VolumenSlider : MonoBehaviour
     private void Start()
     {
         // Inicializar sliders con valores almacenados o predeterminados
-        InitializeSlider(volumeSlider, exposedMasterParam, "MasterVolumePref", 0f);
-        InitializeSlider(musicSlider, exposedMusicParam, "MusicVolumePref", 0f);
-        InitializeSlider(fxSlider, exposedFXParam, "FXVolumePref", 0f);
+        if (volumeSlider != null)
+        {
+            InitializeSlider(volumeSlider, exposedMasterParam, "MasterVolumePref", 0f);
 
-        // Asignar listeners a los sliders
-        volumeSlider.onValueChanged.AddListener(value => SetVolume(value, exposedMasterParam, "MasterVolumePref"));
-        musicSlider.onValueChanged.AddListener(value => SetVolume(value, exposedMusicParam, "MusicVolumePref"));
-        fxSlider.onValueChanged.AddListener(value => SetVolume(value, exposedFXParam, "FXVolumePref"));
+
+            InitializeSlider(musicSlider, exposedMusicParam, "MusicVolumePref", 0f);
+            InitializeSlider(fxSlider, exposedFXParam, "FXVolumePref", 0f);
+
+            // Asignar listeners a los sliders
+            volumeSlider.onValueChanged.AddListener(value => SetVolume(value, exposedMasterParam, "MasterVolumePref"));
+            musicSlider.onValueChanged.AddListener(value => SetVolume(value, exposedMusicParam, "MusicVolumePref"));
+            fxSlider.onValueChanged.AddListener(value => SetVolume(value, exposedFXParam, "FXVolumePref"));
+        }
     }
 
     private void InitializeSlider(Slider slider, string exposedParam, string playerPrefKey, float defaultValue)
