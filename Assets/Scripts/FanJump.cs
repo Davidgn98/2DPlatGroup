@@ -26,6 +26,7 @@ public class FanJump : MonoBehaviour
     {
         if (currDirection == Direction.Arriba && rb.velocity.x == 0f)
         {
+            AudioManager.instance.PlayFX("Air");
             rb.velocity = new Vector2(rb.velocity.x, velocityY);
         }
     }
@@ -36,16 +37,19 @@ public class FanJump : MonoBehaviour
         {
             if (currDirection == Direction.Izquierda)
             {
+                AudioManager.instance.PlayFX("Air");
                 playerMov.setFanned(true);
                 rb.velocity = new Vector2(45f, rb.velocity.y);
             }
             if (currDirection == Direction.Derecha)
             {
+                AudioManager.instance.PlayFX("Air");
                 playerMov.setFanned(true);
                 rb.velocity = new Vector2(-10f, rb.velocity.y);
             }
             if (currDirection == Direction.Abajo)
             {
+                AudioManager.instance.PlayFX("Air");
                 rb.velocity = new Vector2(rb.velocity.x, -velocityY / 2);
             }
         }

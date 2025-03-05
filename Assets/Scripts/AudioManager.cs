@@ -123,4 +123,32 @@ public class AudioManager : MonoBehaviour
         // To test the musicVolume variable
         //mainAudioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
     }
+
+    public void StartLoop(string name)
+    {
+        Sound s = Array.Find(fx, s => s.name == name);
+
+        if (s != null)
+        {
+            s.source.loop = true;
+        }
+        else
+        {
+            Debug.LogWarning("Music " + name + " not found");
+        }
+    }
+
+    public void StopLoop(string name)
+    {
+        Sound s = Array.Find(fx, s => s.name == name);
+
+        if (s != null)
+        {
+            s.source.loop = false;
+        }
+        else
+        {
+            Debug.LogWarning("Music " + name + " not found");
+        }
+    }
 }

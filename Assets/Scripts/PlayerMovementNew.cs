@@ -120,7 +120,6 @@ public class PlayerMovementNew : MonoBehaviour
         if (!isWallJumping && !isKnockBack && !isFanned)
         {
             //movimiento del jugador
-            AudioManager.instance.PlayFX("Walk");
             rb.velocity = new Vector2(horizontalMovement * moventSpeed, rb.velocity.y);
             Flip();
             isKnockBack = false;
@@ -153,6 +152,17 @@ public class PlayerMovementNew : MonoBehaviour
     public void GetMoveInputAction(InputAction.CallbackContext context) 
     {
         horizontalMovement = context.ReadValue<Vector2>().x;
+        if(horizontalMovement != 0)
+        {
+            AudioManager.instance.PlayFX("Walk");
+            AudioManager.instance.StartLoop("Walk");
+        }
+        else
+        {
+            AudioManager.instance.StopLoop("Walk");
+        }
+
+        
     }
 
     private void GroundCheck() 
@@ -178,6 +188,7 @@ public class PlayerMovementNew : MonoBehaviour
         {
             if (jumpsRemaining != 0)
             {
+                AudioManager.instance.PlayFX("Jump");
                 jumpLongPress = true;
             }
         }
@@ -310,23 +321,26 @@ public class PlayerMovementNew : MonoBehaviour
         }
         if(collision.gameObject.tag == "Trampa") 
         {
+            AudioManager.instance.PlayFX("Lose");
             RecibirDaño(collision);
-
         }
 
         if(collision.gameObject.tag == "PajaroPerseguidor" || collision.gameObject.tag == "Ghost") 
         {
+            AudioManager.instance.PlayFX("Lose");
             RecibirDaño(collision);
         }
 
         if (collision.gameObject.tag == "CabezaEnemigo") 
         {
             UnityEngine.Debug.Log("Retroceso Cabeza");
+            AudioManager.instance.PlayFX("Enemy");
             Retroceso(collision);
             Destroy(collision.transform.parent.gameObject);
         }
         if (collision.gameObject.tag == "Basket")
         {
+            AudioManager.instance.PlayFX("Basket");
             Destroy(collision.gameObject);
             basketUI.color = Color.white;
             playerCollector.UpdateBasket(true);
@@ -336,6 +350,7 @@ public class PlayerMovementNew : MonoBehaviour
         {
             if (numFrutas.text == numFrutasTotal.text)
             {
+                AudioManager.instance.PlayFX("Win");
                 StartCoroutine("FinishLevel");
             }
 
@@ -355,7 +370,7 @@ public class PlayerMovementNew : MonoBehaviour
         DesbloqeuarUnNivelMas();
 
         checkpointAnimator.SetBool("Win", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2f);
         AudioManager.instance.StopMusic("Level"+(SceneManager.GetActiveScene().buildIndex+1));
         AudioManager.instance.PlayMusic("MusicaMenu");
         SceneManager.LoadScene(4);

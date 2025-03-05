@@ -16,6 +16,7 @@ public class PlayerCollector : MonoBehaviour
 
             if (iteam != null)
             {
+                AudioManager.instance.PlayFX("Fruit");
                 iteam.Collect();
                 GameManager.instance.UpdateNumFrutas();
             }

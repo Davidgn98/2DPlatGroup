@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 303293370458831052}
+  - component: {fileID: 4942682323623880136}
+  - component: {fileID: 5991006148419911268}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -31,3 +33,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4942682323623880136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271167651927326746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadff81533e7c554dbac6e4b3994ae08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music:
+  - name: MusicaMenu
+    clip: {fileID: 8300000, guid: f47345b903d003249af507de08ef0c28, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Level1
+    clip: {fileID: 8300000, guid: 3b2dda3bea47a83419b189101c7ada70, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Level2
+    clip: {fileID: 8300000, guid: b0aa8b743aa45fb41add653f13fe176e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Level3
+    clip: {fileID: 8300000, guid: bc446fd1e84005c4e84ad40e71aec5a4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Level4
+    clip: {fileID: 8300000, guid: e21ac64b63fbbf34aa2a0d7845a419f0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  fx:
+  - name: Walk
+    clip: {fileID: 8300000, guid: 42068628449dbd44ba109dc88263cba6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Button
+    clip: {fileID: 8300000, guid: 4f25931850af6c64ba02c5b7299dee5c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: a300e70258574424d94cbb2c1fae4c83, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fruit
+    clip: {fileID: 8300000, guid: 08bab21f5958aab40ad618185164cf8b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Air
+    clip: {fileID: 8300000, guid: 9c7634bf2e2c0624990dc104aa301734, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  mainAudioMixer: {fileID: 24100000, guid: 2a68f9ebc858f3845bed7c3d160038e5, type: 2}
+  musicAudioMixerGroup: {fileID: 7424751349711792079, guid: 2a68f9ebc858f3845bed7c3d160038e5, type: 2}
+  FXAudioMixerGroup: {fileID: -270195833632286441, guid: 2a68f9ebc858f3845bed7c3d160038e5, type: 2}
+  musicVolume: 1
+  fxVolume: 1
+--- !u!114 &5991006148419911268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271167651927326746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f223a2c7539af344885cdd0b7348c092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 2a68f9ebc858f3845bed7c3d160038e5, type: 2}
+  volumeSlider: {fileID: 0}
+  exposedMasterParam: Master
+  musicSlider: {fileID: 0}
+  exposedMusicParam: Music
+  fxSlider: {fileID: 0}
+  exposedFXParam: Effectos
