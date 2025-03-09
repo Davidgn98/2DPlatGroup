@@ -9857,7 +9857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4942682323623880136, guid: affbaf202fd72e040b289806e3493be2, type: 3}
       propertyPath: nivelActual
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5991006148419911268, guid: affbaf202fd72e040b289806e3493be2, type: 3}
       propertyPath: fxSlider

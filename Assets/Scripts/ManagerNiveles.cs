@@ -13,7 +13,7 @@ public class ManagerNiveles : MonoBehaviour
     void Start()
     {
 
-        //PlayerPrefs.SetInt("MaxLevel", 0);
+        //PlayerPrefs.SetInt("MaxLevel", 1);
         //PlayerPrefs.Save();
 
         var botonesHijos = gameObject.GetComponentsInChildren<Button>();
@@ -25,11 +25,11 @@ public class ManagerNiveles : MonoBehaviour
         
         }
 
-        maxLevel = PlayerPrefs.GetInt("MaxLevel", 1);
+        maxLevel = PlayerPrefs.GetInt("MaxLevel");
         //print(maxLevel);
         for (int i = 0; i < botonesHijos.Length; i++)
         {
-            if (i<=maxLevel) 
+            if (i<maxLevel) 
             {
                 botonesHijos[i].interactable = true;
             }
@@ -39,7 +39,7 @@ public class ManagerNiveles : MonoBehaviour
     public void StartBouton() 
     {
         AudioManager.instance.StopMusic("MusicaMenu");
-        AudioManager.instance.PlayMusic("Level" + (maxLevel+1));
+        AudioManager.instance.PlayMusic("Level" + (maxLevel));
         SceneManager.LoadScene(maxLevel);
     }
 

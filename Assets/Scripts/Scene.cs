@@ -10,7 +10,7 @@ public class Scene : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 
     private void Update()
@@ -29,10 +29,5 @@ public class Scene : MonoBehaviour
             }
 
         }
-    }
-    public void PauseGame()
-    {
-        
-        
     }
 }

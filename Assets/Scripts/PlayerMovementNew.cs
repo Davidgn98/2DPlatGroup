@@ -370,7 +370,7 @@ public class PlayerMovementNew : MonoBehaviour
 
         checkpointAnimator.SetBool("Win", true);
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         yield return null;
     }
 
